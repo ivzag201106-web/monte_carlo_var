@@ -14,7 +14,7 @@ for i in range(num_simulations):
     daily_returns = np.random.multivariate_normal(mean_returns,cov_returns,num_days)@weight
     portfolio_values = np.cumprod(1+daily_returns)*initial_portfolio
     portfolio_simulations[:, i] = portfolio_values
-    final_values = portfolio_simulations[-1, :]
+final_values = portfolio_simulations[-1, :]
 var_95 = np.percentile(final_values, 5)
 var_99 = np.percentile(final_values, 1)
 volatility = np.std(final_values)
